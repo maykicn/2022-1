@@ -77,6 +77,27 @@ let Author = function(firstName, lastName){
 
 /** create function createTiles to create list items
  * 
+ * 
+ * <ul>
+ * <li>
+    <a href="authors/andreas-neeser.html">
+        <img src="img/tile_andreas_neeser.jpg" alt="Portrait of Andreas Neeser">
+        <h2>Andreas Neeser</h2>
+    </a>
+</li>
+<li>
+    <a href="authors/andreas-neeser.html">
+        <img src="img/tile_andreas_neeser.jpg" alt="Portrait of Andreas Neeser">
+        <h2>Andreas Neeser</h2>
+    </a>
+</li>
+<li>
+    <a href="authors/andreas-neeser.html">
+        <img src="img/tile_andreas_neeser.jpg" alt="Portrait of Andreas Neeser">
+        <h2>Andreas Neeser</h2>
+    </a>
+</li>
+ * <ul>
 <li>
     <a href="authors/andreas-neeser.html">
         <img src="img/tile_andreas_neeser.jpg" alt="Portrait of Andreas Neeser">
@@ -111,7 +132,9 @@ function createTiles(authors){
 
 /** create function addTiles to add all tiles to the DOM randomly */
 function addTiles(list){
+
     const ulTag = document.querySelector('main ul');
+    ulTag.innerHTML = "";
     /** randomize list first */
     list = randomize(list);
     list.forEach(li => ulTag.appendChild(li));
@@ -134,3 +157,14 @@ function randomize(list){
 addTiles(createTiles(authors));
 
 /** add an eventListener on the logo to rebuild the list on click */
+
+const element = document.querySelector("#logo");
+
+element.addEventListener("click", () => {
+	
+        addTiles(createTiles(authors));
+
+});
+
+
+
