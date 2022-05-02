@@ -29,7 +29,10 @@ img {
 }
 
 header {
+    align-items: baseline;
     background: #ffffff;
+    display: flex;
+    justify-content: space-between;
     padding: 1.2rem 0 0.4rem 1.2rem;
     position: sticky;
 }
@@ -39,6 +42,7 @@ header img {
 }
 
 nav ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -75,7 +79,7 @@ main a {
     position: relative;
 }
 
-main h3 {
+main h2 {
     background: #ffffff;
     bottom: 1rem;
     left: 1rem;
@@ -84,7 +88,7 @@ main h3 {
     position: absolute;
 }
 
-main a:hover h3 {
+main a:hover h2 {
     padding: 1.2rem 2rem 3rem;
     max-width: 33rem;
     width: 93%;
@@ -92,10 +96,9 @@ main a:hover h3 {
 
 main a:hover span {
     display: block;
-    font-weight: 300;
     border-bottom: 5px solid #1b1b1b;
     font-size: 2.400em;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.11;
     padding: 0 0 0.333em 0;
     margin: 0 0 0.417em 0;
@@ -109,6 +112,58 @@ main a:hover span::after {
     position: absolute;
 }
 
+main ul { 
+    display: grid;
+    gap: 1rem;
+}
+
+main li:nth-of-type(1) {
+    grid-area: img1;
+}
+
+main li:nth-of-type(2) {
+    grid-area: img2;
+}
+
+main li:nth-of-type(3) {
+    grid-area: img3;
+}
+
+main li:nth-of-type(4) {
+    grid-area: img4;
+}
+
+main li:nth-of-type(5) {
+    grid-area: img5;
+}
+
+main li:nth-of-type(6) {
+    grid-area: img6;
+}
+
+main li:nth-of-type(7) {
+    grid-area: img7;
+}
+
+main li:nth-of-type(8) {
+    grid-area: img8;
+}
+
+main li:nth-of-type(9) {
+    grid-area: img9;
+}
+
+main li:nth-of-type(10) {
+    grid-area: img10;
+}
+
+main li:nth-of-type(11) {
+    grid-area: img11;
+}
+
+main li:nth-of-type(12) {
+    grid-area: img12;
+}
 
 footer {
     background: #ffffff;
@@ -128,10 +183,32 @@ footer {
 
 /* min-width 751px, medium screens */
 @media only screen and (min-width: 46.938em) {
-	
+	main ul {
+        grid-template-areas: 
+        'img1 img2'
+        'img3 img3'
+        'img3 img3'
+        'img4 img4'
+        'img4 img4'
+        'img5 img6'
+        'img7 img8'
+        'img9 img9'
+        'img9 img9'
+        'img10 img10'
+        'img10 img10'
+        'img11 img12';
+    }
 }
 
 /* min-width 1025px, large screens */
 @media only screen and (min-width: 64.063em) {
-	
+	main ul {
+        grid-template-areas: 
+            'img1 img2 img2 img3 img3'
+            'img4 img2 img2 img3 img3'
+            'img5 img5 img6 img6 img7'
+            'img5 img5 img6 img6 img8'
+            'img9 img10 img10 img11 img11'
+            'img12 img10 img10 img11 img11'
+    }
 }
